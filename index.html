@@ -10,29 +10,80 @@
   <link rel="stylesheet" href="css/dist/style.css">
 </head>
 
-<body ontouchstart>
-  <nav class="window menuBar">
-    <div class="title-bar">
-      <div class="title-bar-text">
-        My Pofile
+<body>
+
+  <div class="load">
+    <div class="progress-indicator segmented" style="background-color: aliceblue;">
+      <span id="frist-load" class="progress-indicator-bar">
+    </div>
+  </div>
+
+
+  <div id="main-content">
+    <nav class="window menuBar">
+      <div class="title-bar">
+        <div class="title-bar-text"></div>
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Maximize"></button>
+        </div>
       </div>
-    </div>
-    <div class="window-body menu_tab">
-      <div class="logo"><img src="css/icon/logo_block.png" alt=""></div>
-      <menu role="tablist">
-        <li role="tab"><img src="css/icon/computer_2_cool-4.png" alt=""><a href="#tabs">Trang chủ</a></li>
-        <li role="tab"><img src="css/icon/users-2.png" alt=""><a href="#tabs">About me</a></li>
-        <li role="tab"><img src="css/icon/notepad_file_gear-2.png" alt=""><a href="#tabs">Kinh nghiệm</a></li>
-        <li role="tab"><img src="css/icon/modem-4.png" alt=""><a href="#tabs">Liên lạc</a></li>
-      </menu>
-    </div>
-  </nav>
-  <section id="main_content">
+      <div class="title-bar">
+        <div class="title-bar-text">
+          <h3>Welcome to my Blog</h3>
+        </div>
+      </div>
+      <div class="window-body menu_tab">
+        <div class="logo"><img src="css/icon/logo_block.png" alt=""></div>
+        <menu role="tablist">
+          <li role="tab"><img src="css/icon/computer_2_cool-4.png" alt=""><a href="#tabs">Trang chủ</a></li>
+          <li role="tab"><img src="css/icon/users-2.png" alt=""><a href="#tabs">About me</a></li>
+          <li role="tab"><img src="css/icon/notepad_file_gear-2.png" alt=""><a href="#tabs">Kinh nghiệm</a></li>
+          <li role="tab"><img src="css/icon/modem-4.png" alt=""><a href="#tabs">Liên lạc</a></li>
+        </menu>
+      </div>
+    </nav>
+
     <main>
+      <div id="Profile">
+        <div class="window">
+          <div class="title-bar">
+            <div class="title-bar-text">About Me</div>
+            <div class="title-bar-controls">
+              <button aria-label="Minimize"></button>
+              <button aria-label="Maximize"></button>
+              <button aria-label="Close"></button>
+            </div>
+          </div>
+          <div class="window-body">
+            <ul class="tree-view TextProfile">
+              <li>We can put</li>
+              <li><strong style="color: purple"> Whatever </strong></li>
+              <li>We want in here</li>
+            </ul>
+          </div>
+        </div>
 
+
+        <div class="window">
+          <div class="title-bar">
+            <div class="title-bar-text">A Pic About Me</div>
+            <div class="title-bar-controls">
+              <button aria-label="Minimize"></button>
+              <button aria-label="Maximize"></button>
+              <button aria-label="Close"></button>
+            </div>
+          </div>
+          <div class="window-body ImgProfile">
+            <img src="css/icon/logo_block.png" alt="">
+          </div>
+        </div>
     </main>
-  </section>
-
+  </div>
+  <div class="sound" style="display: none;">
+    <audio id="start_up_sound" preload="auto" src="css/audio/LOGOFF.mp3"></audio>
+  </div>
+  <script type="module" src="effect/index.js"></script>
 </body>
 <footer>
   <div class="window-body">
