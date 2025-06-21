@@ -5,19 +5,19 @@
   <title>98.css example</title>
   <meta charset="UTF-8" />
   <link rel="stylesheet" href="css/dist/98.css" />
-
   <link rel="stylesheet" href="css/dist/98.css.map">
   <link rel="stylesheet" href="css/dist/style.css">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
 </head>
 
 <body>
-
+  <!--hiệu ứng load -->
   <div class="load">
     <div class="progress-indicator segmented" style="background-color: aliceblue;">
       <span id="frist-load" class="progress-indicator-bar">
     </div>
   </div>
-
 
   <div id="main-content">
     <nav class="window menuBar">
@@ -46,6 +46,7 @@
 
     <main>
       <div id="Profile">
+        <!-- thông tin cá nhân cơ bản -->
         <div class="window">
           <div class="title-bar">
             <div class="title-bar-text">About Me</div>
@@ -57,14 +58,17 @@
           </div>
           <div class="window-body">
             <ul class="tree-view TextProfile">
-              <li>We can put</li>
-              <li><strong style="color: purple"> Whatever </strong></li>
-              <li>We want in here</li>
+              <li><strong style="color: purple"> Họ tên: </strong>Hà Trung Hiếu</li>
+              <li><strong style="color: purple"> Email: </strong>hhieu3343@gmail.com</li>
+              <li><strong style="color: purple"> Nơi ở hiện tại: </strong>Pháp Vân_Hà Nội</li>
+              <li><strong style="color: purple"> Webside: </strong> <a
+                  href="https://github.com/motcaitenkhongtrungvoiai"><strong style="color: rgb(17, 0, 128)">
+                    https://github.com/motcaitenkhongtrungvoiai</strong></a></li>
             </ul>
           </div>
         </div>
 
-
+        <!-- hiển thị ảnh cá nhân -->
         <div class="window">
           <div class="title-bar">
             <div class="title-bar-text">A Pic About Me</div>
@@ -78,12 +82,45 @@
             <img src="css/icon/logo_block.png" alt="">
           </div>
         </div>
-    </main>
+      </div>
+
+      <!--Contract Windows-->
+      <div id="Contract">
+        <div class="window">
+          <div class="title-bar">
+            <div class="title-bar-text">CONTRACT TO ME</div>
+            <div class="title-bar-controls">
+              <button aria-label="Minimize"></button>
+              <button aria-label="Maximize"></button>
+              <button aria-label="Close"></button>
+            </div>
+          </div>
+          <div class="window-body">
+            <form class="field-row" id="contact-form">
+              <label for="text17">What can i call you?</label>
+              <input id="text17" name="name" type="text" placeholder="Your name" />
+              <label for="text18">You email Pls?</label>
+              <input id="text18" name="email" type="email" placeholder="Your email" />
+              <label for="text19">Title</label>
+              <input id="text19" name="title" type="text" placeholder="Title" />
+              <input type="hidden" name="time" value="Mar 10 2025 08:46">
+              <label for="text20">Message</label>
+              <textarea name="message" id="text20"></textarea>
+              <input type="submit" />
+              <input type="reset" />
+            </form>
+          </div>
+
+        </div>
+      </div>
+  </div>
+  </main>
   </div>
   <div class="sound" style="display: none;">
     <audio id="start_up_sound" preload="auto" src="css/audio/LOGOFF.mp3"></audio>
   </div>
   <script type="module" src="effect/index.js"></script>
+  <script type="module" src="service/sendContract.js"></script>
 </body>
 <footer>
   <div class="window-body">
