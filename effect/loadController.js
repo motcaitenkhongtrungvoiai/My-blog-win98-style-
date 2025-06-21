@@ -6,6 +6,7 @@ export function contentLoader() {
     loadEffect.style.width = width + "%";
     if (width < 100) {
       requestAnimationFrame(animate);
+       document.querySelector("#main-content").style.display="none"
     }
     else{
         document.querySelector(".load").style.display="none";
