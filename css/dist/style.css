@@ -15,7 +15,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  display: none;
+  display: block;
 }
 .menuBar {
   width: 70%;
@@ -25,10 +25,11 @@ body {
 }
 menu {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 4px;
   float: right;
   align-items: end;
+
 }
 menu li {
   width: 150px;
@@ -38,7 +39,7 @@ menu li {
   align-items: center;
 }
 li img {
-  width: 4em;
+  max-width: 4em;
   position: relative;
   top: 0px;
   transition: all 0.2s;
@@ -59,18 +60,28 @@ li:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 #Profile {
-  display: flex;
+  display:flex;
+  height: auto;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
+   padding: 0px;
+    margin: 0px;  
+}
+#Profile .window {
+  height: fit-content;
 }
 #Profile .ImgProfile {
   max-width: 400px;
   max-height: auto;
 }
 #Profile .TextProfile {
-  width: 300px;
+  align-self: flex-start; /* override nếu cần */
+  width:fit-content;
+
 }
 
 #Profile .ImgProfile img {
@@ -80,6 +91,8 @@ li:hover {
   display:block;
   align-items: center;
   justify-content: center;
-  height: 90vh;
   width: 70%; 
+}
+.window{
+  transition: all 0.5s ;
 }
