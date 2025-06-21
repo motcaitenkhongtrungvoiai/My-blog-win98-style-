@@ -4,7 +4,7 @@ import { bigerBox, closeBox ,smallerBox} from "./othereffect.js";
 window.addEventListener("DOMContentLoaded",()=>{
 //sound play
 //startUp_sound();
-contentLoader(); // hiệu ứng load giả
+//contentLoader(); // hiệu ứng load giả
 closeBox();
 bigerBox();
 smallerBox();

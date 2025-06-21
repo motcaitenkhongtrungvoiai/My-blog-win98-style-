@@ -15,7 +15,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  display: block;
+ 
 }
 .menuBar {
   width: 70%;
@@ -88,7 +88,7 @@ li:hover {
   width: 100%;
 }
 .load{
-  display:block;
+  display:none;
   align-items: center;
   justify-content: center;
   width: 70%; 

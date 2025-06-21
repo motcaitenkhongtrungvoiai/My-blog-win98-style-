@@ -1,5 +1,6 @@
 export function contentLoader() {
   const loadEffect = document.querySelector("#frist-load");
+  document.querySelector(".load").style.display="block";
   let width = 0;
   function animate() {
     width += 0.5; 
