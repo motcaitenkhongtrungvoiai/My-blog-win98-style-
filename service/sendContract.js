@@ -11,6 +11,7 @@ emailjs.init(YOUR_PUBLIC_KEY);
 // Bắt sự kiện gửi form
 window.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contact-form");
+  form.elements['time'].value = new Date().toISOString();
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     emailjs
