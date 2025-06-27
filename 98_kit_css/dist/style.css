@@ -4,10 +4,14 @@ body {
   align-items: center;
   justify-content: center;
   background-color: #008080;
-  cursor: url("small-cursor.png") 5 5, auto;
+  scroll-behavior: smooth;
+
 }
 .window {
   margin: 0.5em;
+}
+.window-body{
+  transition: all;
 }
 #main-content{
   width: 100%;
@@ -81,7 +85,6 @@ li:hover {
 #Profile .TextProfile {
   align-self: flex-start; /* override nếu cần */
   width:fit-content;
-
 }
 
 #Profile .ImgProfile img {
@@ -93,9 +96,7 @@ li:hover {
   justify-content: center;
   width: 70%; 
 }
-.window{
-  transition: all 0.5s ;
-}
+
 #contact-form{
   display: flex;
   flex-direction: column;
