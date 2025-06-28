@@ -119,3 +119,11 @@ li:hover {
 #Contract{
   width: 400px;
 }
+.new_menu_tab_containt{
+  width: 200px;
+  height:90vh ;
+  position: fixed;
+  top:5vh;
+  right: 0px;
+  background-color:aquamarine ;
+}

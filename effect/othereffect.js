@@ -24,28 +24,24 @@ export function bigerBox() {
       windowBody.style.display = "block";
 
       const originalStyles = {
-        height: windowBody.scrollHeight ,
-        width: windowBody.scrollWidth ,
+        height: windowBody.scrollHeight,
+        width: windowBody.scrollWidth,
       };
 
       gsap.fromTo(
         windowBody,
         {
-          height: 0,
-          width: 0,
+          scale: 0,
           opacity: 0,
           padding: 0,
           margin: 0,
-          
         },
         {
-          height: originalStyles.height,
-          width: originalStyles.width,
+          scale: 1,
           opacity: 1,
           padding: "4px",
           margin: "4px",
           duration: 0.5,
-          
         }
       );
     }
@@ -64,8 +60,7 @@ export function smallerBox() {
       windowBody._originalWidth = windowBody.scrollWidth;
 
       gsap.to(windowBody, {
-        height: 0,
-        width: 0,
+        scale: 0,
         opacity: 0,
         padding: 0,
         margin: 0,
@@ -75,5 +70,57 @@ export function smallerBox() {
         },
       });
     }
+  });
+}
+
+// effect for word
+export function splitText() {
+  gsap.registerPlugin(SplitText);
+  document.fonts.ready.then(() => {
+    gsap.set(".title-bar-text", { opacity: 1 });
+    let split;
+    SplitText.create(".title-bar-text", {
+      type: "lines,words",
+      linesClass: "line",
+      wordsClass: "word++",
+      autoSplit: true,
+      mask: "lines",
+      onSplit: (self) => {
+        split = gsap.from(self.lines, {
+          duration: 0.6,
+          yPercent: 100,
+          opacity: 0,
+          stagger: 0.1,
+          ease: "expo.out",
+        });
+        return split;
+      },
+    });
+  });
+}
+
+export function moveMenu() {
+  const menu = document.querySelectorAll('menu li[role="tab"]'),
+    originContainer = document.querySelector(".menu_tab menu"),
+    newContainer = document.querySelector(".new_menu_tab_containt menu");
+  gsap.registerPlugin(Flip);
+  window.addEventListener("scroll", () => {
+    const state = Flip.getState(menu);
+
+    if (window.scrollY > 30) {
+      menu.forEach((box) => {
+        newContainer.appendChild(box);
+      });
+    } else {
+      menu.forEach((box) => {
+        originContainer.appendChild(box);
+      });
+    }
+
+    Flip.from(state, {
+      duration: 0.5,
+      ease: "power1.inOut",
+      stagger: 0.05,
+    });
   });
 }

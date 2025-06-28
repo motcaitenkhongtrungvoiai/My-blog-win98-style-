@@ -7,8 +7,12 @@
   <link rel="stylesheet" href="98_kit_css/dist/98.css" />
   <link rel="stylesheet" href="98_kit_css/dist/98.css.map">
   <link rel="stylesheet" href="98_kit_css/dist/style.css">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Flip.min.js"></script>
+
+
   </script>
 </head>
 
@@ -31,11 +35,11 @@
       </div>
       <div class="title-bar">
         <div class="title-bar-text">
-          <h3>Welcome to my Blog</h3>
+          <h3 class="split">Welcome to my Blog</h3>
         </div>
       </div>
       <div class="window-body menu_tab">
-        <div class="logo"><img src="css/icon/logo_block.png" alt=""></div>
+        <div class="logo"><img src="" alt=""></div>
         <menu role="tablist">
           <li role="tab"><img src="98_kit_css/icon/computer_2_cool-4.png" alt=""><a href="#tabs">Trang chủ</a></li>
           <li role="tab"><img src="98_kit_css/icon/users-2.png" alt=""><a href="#tabs">About me</a></li>
@@ -44,7 +48,7 @@
         </menu>
       </div>
     </nav>
-
+    <div class="new_menu_tab_containt"> <menu role="tablist"></menu></div>
     <main>
       <div id="Profile">
         <!-- thông tin cá nhân cơ bản -->
@@ -97,7 +101,7 @@
             </div>
           </div>
           <div class="window-body">
-            
+
             <form class="field-row" id="contact-form">
               <label for="text17">What can i call you?</label>
               <input id="text17" name="name" type="text" placeholder="Your name" />

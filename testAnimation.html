@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Flip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <style>
+        .box {
+            width: 20px;
+            height: 20px;
+            background-color: black;
+            border-radius: 50%;
+        }
+
+        .originContail {
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+        }
+
+        .newContail {
+            position: relative;
+            top:78px;
+            left: 98px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            .box{
+              width: 20px;
+            height: 20px;
+            background-color: rgb(5, 144, 100);
+            border-radius: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="originContail">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <div> cái mẹ gì đó ở giữa mấy cái div này </div>
+    <div class="newContail"></div>
+    <button> changeContaint</button>
+    <script>
+       gsap.registerPlugin(Flip);
+
+const boxes = document.querySelectorAll(".box");
+const origin = document.querySelector(".originContail");
+const newOrigin = document.querySelector(".newContail");
+const button = document.querySelector("button");
+
+button.addEventListener("click", () => {
+   
+    const state = Flip.getState(".box");
+
+    boxes.forEach((box) => {
+        const currentParent = box.parentNode;
+        const targetParent = currentParent === origin ? newOrigin : origin;
+        targetParent.appendChild(box);
+    });
+
+
+    Flip.from(state, {
+        duration: 0.5,
+        ease: "power1.inOut",
+        stagger: 0.05,
+        opacity:0.2,
+    });
+});
+
+    </script>
+</body>
+
+</html>
